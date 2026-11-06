@@ -1,0 +1,15 @@
+/* Estilização Geral do Canvas e Interface */
+
+body {
+    user-select: none;
+}
+
+canvas {
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.8);
+    image-rendering: pixelated;
+}
+
+/* Animação suave para caixas de diálogo */
+#modal {
+    transition: opacity 0.2s ease-in-out;
+}

@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Investigação Forense</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body class="bg-gray-950 text-gray-100 font-mono min-h-screen flex flex-col justify-between p-4">
+
+    <header class="bg-gray-900 border-b border-gray-800 p-4 rounded-lg flex justify-between items-center">
+        <div>
+            <h1 class="text-lg font-bold text-yellow-500 flex items-center gap-2">
+                <i class="fa-solid fa-microscope"></i> PERÍCIA CRIMINAL DE CAMPO
+            </h1>
+            <p class="text-xs text-gray-400">Controles: Use as setas do teclado para mover o perito.</p>
+        </div>
+        <div class="bg-gray-950 px-3 py-1.5 rounded border border-gray-800 text-xs">
+            Evidências Encontradas: <span id="evidence-count" class="text-yellow-500 font-bold">0 / 3</span>
+        </div>
+    </header>
+
+    <main class="my-4 flex flex-col items-center">
+        <!-- Canvas onde o jogo é desenhado -->
+        <canvas id="gameCanvas" width="800" height="450" class="border-2 border-gray-800 rounded-lg shadow-2xl bg-black"></canvas>
+    </main>
+
+    <footer class="bg-gray-900 border-t border-gray-800 p-4 rounded-lg flex justify-between items-center text-xs text-gray-400">
+        <span>Status da Investigação: <strong id="status-text" class="text-yellow-500">Em andamento</strong></span>
+        <span>Aperte [ESPAÇO] quando estiver em cima de uma evidência para examinar.</span>
+    </footer>
+
+    <!-- Modal de Análise -->
+    <div id="modal" class="fixed inset-0 bg-black/80 backdrop-blur-sm hidden items-center justify-center p-4">
+        <div class="bg-gray-900 border border-yellow-600/40 p-6 rounded-lg max-w-md w-full">
+            <h2 id="modal-title" class="text-base font-bold text-yellow-500 mb-2"></h2>
+            <p id="modal-desc" class="text-xs text-gray-300 mb-4"></p>
+            <button onclick="closeModal()" class="w-full bg-yellow-600 hover:bg-yellow-500 text-black font-bold py-1.5 rounded text-xs transition-all">
+                FECHAR RELATÓRIO
+            </button>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
